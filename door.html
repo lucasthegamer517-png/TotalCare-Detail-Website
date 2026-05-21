@@ -44,7 +44,7 @@ body{font-family:var(--fb);background:var(--navy);color:var(--silver);line-heigh
 <input type="hidden" name="source" value="Door To Door">
 <input type="hidden" name="_subject" value="Door To Door Lead — TotalCare Detail">
 <h2>Get a Free Quote</h2>
-<p class="sub">Leave your info and Lucas will be in touch.</p>
+<p class="sub">Leave your info and we'll be in touch.</p>
 <div class="form-group"><label class="form-label" for="dname">Full Name</label><input class="form-input" type="text" id="dname" name="name" placeholder="John Smith" required></div>
 <div class="form-group"><label class="form-label" for="dphone">Phone</label><input class="form-input" type="tel" id="dphone" name="phone" placeholder="(336) 000-0000" required></div>
 <div class="form-group"><label class="form-label" for="demail">Email</label><input class="form-input" type="email" id="demail" name="email" placeholder="you@example.com" required></div>
@@ -55,7 +55,7 @@ body{font-family:var(--fb);background:var(--navy);color:var(--silver);line-heigh
 <footer class="door-footer">&copy; 2026 TotalCare Mobile Detailing — Winston-Salem, NC</footer>
 <script>
 const f=document.getElementById('doorForm');
-f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('doorBtn'),m=document.getElementById('doorMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent='Got it! Lucas will be in touch.';f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Info';b.disabled=false;});
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('doorBtn'),m=document.getElementById('doorMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent="Got it! We'll be in touch.";f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Info';b.disabled=false;});
 </script>
 </body>
 </html>
