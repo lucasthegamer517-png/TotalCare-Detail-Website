@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>TotalCare Detail</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#050c1a;--navy2:#081428;
+  --blue:#1b5faf;--blue-bright:#3d8ef7;--blue-neon:#7bb8ff;
+  --silver:#bccadb;--white:#f4f7fb;--pure:#ffffff;
+  --glass2:rgba(8,20,40,.7);--gborder:rgba(61,142,247,.12);
+  --fd:'Playfair Display',serif;--fb:'DM Sans',sans-serif;
+}
+body{font-family:var(--fb);background:var(--navy);color:var(--silver);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+.door-header{padding:22px 24px;text-align:center;border-bottom:1px solid var(--gborder)}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.5rem;color:var(--pure);text-decoration:none;letter-spacing:.5px}
+.logo i{font-style:normal;color:var(--blue-bright)}
+.door-main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:24px 20px 40px}
+.door-form{width:100%;max-width:440px;background:var(--glass2);border:1px solid var(--gborder);padding:30px 26px;position:relative}
+.door-form::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue-bright),transparent)}
+.door-form h2{font-family:var(--fd);font-weight:700;font-size:1.4rem;color:var(--pure);margin-bottom:4px;text-align:center}
+.door-form .sub{font-size:.84rem;color:var(--silver);opacity:.6;font-weight:300;text-align:center;margin-bottom:24px}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.form-label{font-size:.6rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue-bright)}
+.form-input{background:rgba(5,12,26,.6);border:1px solid var(--gborder);color:var(--white);font-family:var(--fb);font-size:1rem;font-weight:300;padding:15px 16px;outline:none;width:100%;transition:border-color .2s}
+.form-input::placeholder{color:rgba(188,202,219,.3)}
+.form-input:focus{border-color:var(--blue-bright)}
+.form-submit{width:100%;padding:17px;margin-top:4px;font-family:var(--fb);font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--pure);border:none;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue-bright))}
+.form-submit:disabled{opacity:.6;cursor:not-allowed}
+.form-msg{margin-top:16px;padding:15px;font-size:.9rem;text-align:center;display:none}
+.form-msg.success{background:rgba(61,142,247,.08);border:1px solid rgba(61,142,247,.2);color:var(--blue-neon);display:block}
+.form-msg.error{background:rgba(200,50,50,.08);border:1px solid rgba(200,50,50,.2);color:#f87171;display:block}
+.door-footer{padding:18px 24px;text-align:center;font-size:.64rem;letter-spacing:1px;color:rgba(188,202,219,.25)}
+</style>
+</head>
+<body>
+<header class="door-header"><span class="logo">Total<i>Care</i></span></header>
+<main class="door-main">
+<form class="door-form" id="doorForm" action="https://formspree.io/f/mzdyjjoe" method="POST">
+<input type="hidden" name="source" value="Door To Door">
+<input type="hidden" name="_subject" value="Door To Door Lead — TotalCare Detail">
+<h2>Get a Free Quote</h2>
+<p class="sub">Leave your info and Lucas will be in touch.</p>
+<div class="form-group"><label class="form-label" for="dname">Full Name</label><input class="form-input" type="text" id="dname" name="name" placeholder="John Smith" required></div>
+<div class="form-group"><label class="form-label" for="dphone">Phone</label><input class="form-input" type="tel" id="dphone" name="phone" placeholder="(336) 000-0000" required></div>
+<div class="form-group"><label class="form-label" for="demail">Email</label><input class="form-input" type="email" id="demail" name="email" placeholder="you@example.com" required></div>
+<button type="submit" class="form-submit" id="doorBtn">Send My Info</button>
+<div class="form-msg" id="doorMsg"></div>
+</form>
+</main>
+<footer class="door-footer">&copy; 2026 TotalCare Mobile Detailing — Winston-Salem, NC</footer>
+<script>
+const f=document.getElementById('doorForm');
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('doorBtn'),m=document.getElementById('doorMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent='Got it! Lucas will be in touch.';f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Info';b.disabled=false;});
+</script>
+</body>
+</html>
