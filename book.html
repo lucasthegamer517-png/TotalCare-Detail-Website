@@ -114,6 +114,7 @@ footer .copy{color:rgba(188,202,219,.2);font-size:.65rem;letter-spacing:1px}
 const N=document.getElementById('nav');
 window.addEventListener('scroll',()=>{N.classList.toggle('scrolled',window.scrollY>60)});
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>N.classList.remove('open'))});
+const _p=new URLSearchParams(location.search).get('pkg');if(_p){const _t=document.getElementById('blooking');if(_t)_t.value="I'm interested in "+_p+". ";}
 const f=document.getElementById('bookForm');
 f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('bookBtn'),m=document.getElementById('bookMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent="We got it! We'll reach out to you personally within a few hours.";f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Request';b.disabled=false;});
 </script>
