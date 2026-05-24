@@ -37,6 +37,9 @@ h1{font-family:var(--fd);font-weight:700;font-size:1.6rem;color:var(--ink);text-
 .form-msg.success{background:var(--blue-soft);border:1px solid var(--border2);color:var(--blue);display:block}
 .form-msg.error{background:#fdeaea;border:1px solid #f3c7c7;color:#b32d2d;display:block}
 .note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 4px;cursor:pointer}
+.consent input{margin-top:2px;width:17px;height:17px;flex-shrink:0;accent-color:var(--blue-mid);cursor:pointer}
+.consent span{font-size:.76rem;color:var(--body);line-height:1.55}
 .foot{padding:18px 24px;text-align:center;font-size:.62rem;letter-spacing:1px;color:#aebed4;background:var(--navy)}
 @media(max-width:560px){.row{grid-template-columns:1fr}.card{padding:30px 22px}}
 </style>
@@ -55,8 +58,9 @@ h1{font-family:var(--fd);font-weight:700;font-size:1.6rem;color:var(--ink);text-
 <div class="form-group"><label class="form-label" for="iemail">Email</label><input class="form-input" type="email" id="iemail" name="email" placeholder="you@example.com" required></div>
 <div class="form-group"><label class="form-label" for="iaddr">Service Address</label><input class="form-input" type="text" id="iaddr" name="address" placeholder="Where we'll detail the car" required></div>
 <div class="form-group"><label class="form-label">Your Vehicle</label><div class="row"><input class="form-input" type="text" name="vehicle_year" placeholder="Year" required><input class="form-input" type="text" name="vehicle_make" placeholder="Make" required><input class="form-input" type="text" name="vehicle_model" placeholder="Model" required></div></div>
+<label class="consent"><input type="checkbox" name="marketing_consent" value="Yes"><span>Send me deals &amp; offers from TotalCare by text or email — discounts and seasonal specials only, never spam. Msg &amp; data rates may apply; reply STOP anytime.</span></label>
 <button type="submit" class="form-submit" id="intakeBtn">Submit My Details</button>
-<p class="note">Your info is only used to set up and service your detail.</p>
+<p class="note">We use your details only to schedule your detail and send your receipt. We never sell your information.</p>
 <div class="form-msg" id="intakeMsg"></div>
 </form>
 </main>
