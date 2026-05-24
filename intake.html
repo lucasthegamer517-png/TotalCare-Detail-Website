@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Your Details — TotalCare Detail</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f8fc;--ink:#0f2742;--body:#516079;--muted:#8190a4;
+  --blue:#1b5faf;--blue-mid:#2872d4;--blue-soft:#eaf2fc;--gold:#a8842c;
+  --border:#e4ebf4;--border2:#d2deef;--card:#ffffff;--navy:#0b2038;
+  --fd:'Playfair Display',serif;--fb:'DM Sans',sans-serif;
+}
+body{font-family:var(--fb);background:var(--bg);color:var(--body);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+.head{padding:22px 24px;text-align:center;background:var(--navy)}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.5rem;color:#fff;text-decoration:none;letter-spacing:.3px}
+.logo i{font-style:normal;color:#3d8ef7}
+main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:36px 20px 50px}
+.card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--border);padding:38px 34px;position:relative;box-shadow:0 14px 50px rgba(15,39,66,.08)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.eyebrow{font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-mid);text-align:center;margin-bottom:10px}
+h1{font-family:var(--fd);font-weight:700;font-size:1.6rem;color:var(--ink);text-align:center;margin-bottom:8px}
+.sub{font-size:.88rem;color:var(--body);text-align:center;margin-bottom:28px;line-height:1.6}
+.form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.form-label{font-size:.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-mid)}
+.form-input{background:#fff;border:1px solid var(--border2);color:var(--ink);font-family:var(--fb);font-size:.95rem;padding:14px 16px;outline:none;width:100%;transition:border-color .25s,box-shadow .25s}
+.form-input::placeholder{color:var(--muted);font-size:.88rem}
+.form-input:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(40,114,212,.1)}
+.form-submit{width:100%;padding:16px;margin-top:6px;font-family:var(--fb);font-size:.76rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;border:none;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue-mid));box-shadow:0 8px 22px rgba(27,95,175,.2);transition:all .35s}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(27,95,175,.3)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-msg{margin-top:18px;padding:15px;font-size:.88rem;text-align:center;display:none}
+.form-msg.success{background:var(--blue-soft);border:1px solid var(--border2);color:var(--blue);display:block}
+.form-msg.error{background:#fdeaea;border:1px solid #f3c7c7;color:#b32d2d;display:block}
+.note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6}
+.foot{padding:18px 24px;text-align:center;font-size:.62rem;letter-spacing:1px;color:#aebed4;background:var(--navy)}
+@media(max-width:560px){.row{grid-template-columns:1fr}.card{padding:30px 22px}}
+</style>
+</head>
+<body>
+<header class="head"><span class="logo">Total<i>Care</i></span></header>
+<main>
+<form class="card" id="intakeForm">
+<div class="eyebrow">Almost Set</div>
+<h1>A Few Quick Details</h1>
+<p class="sub">Thanks for booking with TotalCare. Drop your details below so we can get everything ready for your detail.</p>
+<input type="hidden" name="source" value="Client Intake">
+<input type="hidden" name="_subject" value="New Client Intake — TotalCare Detail">
+<div class="form-group"><label class="form-label" for="iname">Full Name</label><input class="form-input" type="text" id="iname" name="name" placeholder="John Smith" required></div>
+<div class="form-group"><label class="form-label" for="iphone">Phone</label><input class="form-input" type="tel" id="iphone" name="phone" placeholder="(336) 000-0000" required></div>
+<div class="form-group"><label class="form-label" for="iemail">Email</label><input class="form-input" type="email" id="iemail" name="email" placeholder="you@example.com" required></div>
+<div class="form-group"><label class="form-label" for="iaddr">Service Address</label><input class="form-input" type="text" id="iaddr" name="address" placeholder="Where we'll detail the car" required></div>
+<div class="form-group"><label class="form-label">Your Vehicle</label><div class="row"><input class="form-input" type="text" name="vehicle_year" placeholder="Year" required><input class="form-input" type="text" name="vehicle_make" placeholder="Make" required><input class="form-input" type="text" name="vehicle_model" placeholder="Model" required></div></div>
+<button type="submit" class="form-submit" id="intakeBtn">Submit My Details</button>
+<p class="note">Your info is only used to set up and service your detail.</p>
+<div class="form-msg" id="intakeMsg"></div>
+</form>
+</main>
+<footer class="foot">&copy; 2026 TotalCare Mobile Detailing — Winston-Salem, NC</footer>
+<script>
+// WEBHOOK: Make custom webhook -> upserts into Airtable "Customers" (matched by phone, source="Client Intake").
+const WEBHOOK="https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7";
+const f=document.getElementById('intakeForm');
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('intakeBtn'),m=document.getElementById('intakeMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(WEBHOOK,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent="Got it — you're all set! We'll be in touch to confirm your detail.";f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please text us at (336) 934-1604.';}b.textContent='Submit My Details';b.disabled=false;});
+</script>
+</body>
+</html>
