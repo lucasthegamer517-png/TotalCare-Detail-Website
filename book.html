@@ -95,7 +95,7 @@ footer .copy{color:rgba(174,190,212,.4);font-size:.65rem;letter-spacing:1px}
 <section class="book-hero"><div class="label">Book Your Detail</div><h1>Let's Take Care of Your Car</h1><p>Fill out the form below and we'll reach out personally to get you squared away.</p></section>
 
 <div class="book-wrap">
-<form class="contact-form" id="bookForm" action="https://formspree.io/f/mzdyjjoe" method="POST">
+<form class="contact-form" id="bookForm" action="https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7" method="POST">
 <input type="hidden" name="source" value="Online Inquiry">
 <input type="hidden" name="_subject" value="New Booking Request — TotalCare Detail">
 <input type="hidden" name="package_interest" id="pkgField">
@@ -120,7 +120,7 @@ window.addEventListener('scroll',()=>{N.classList.toggle('scrolled',window.scrol
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>N.classList.remove('open'))});
 const _p=new URLSearchParams(location.search).get('pkg');if(_p){const pf=document.getElementById('pkgField');if(pf)pf.value=_p;const lp=_p.toLowerCase();let sv=lp.includes('interior')?'Interior Only':lp.includes('exterior')?'Exterior Only':lp.includes('monthly')?'Monthly Maintenance':lp.includes('total')?'Total (Interior + Exterior)':'';if(sv){const r=document.querySelector('#svcGroup input[value="'+sv+'"]');if(r)r.checked=true;}const c=document.getElementById('pkgConfirm');if(c){document.getElementById('pkgName').textContent=_p;c.style.display='block';}}
 const f=document.getElementById('bookForm');
-f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('bookBtn'),m=document.getElementById('bookMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';const fd=new FormData(f);fetch("https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7",{method:'POST',body:fd}).catch(()=>{});try{const r=await fetch(f.action,{method:'POST',body:fd,headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent="We got it! We'll reach out to you personally within a few hours.";f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Request';b.disabled=false;});
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('bookBtn'),m=document.getElementById('bookMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';const fd=new FormData(f);try{await fetch("https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7",{method:'POST',body:fd,mode:'no-cors'});m.className='form-msg success';m.textContent="We got it! We'll reach out to you personally within a few hours.";f.reset();}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Request';b.disabled=false;});
 </script>
 </body>
 </html>

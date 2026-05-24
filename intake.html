@@ -65,7 +65,7 @@ h1{font-family:var(--fd);font-weight:700;font-size:1.6rem;color:var(--ink);text-
 // WEBHOOK: Make custom webhook -> upserts into Airtable "Customers" (matched by phone, source="Client Intake").
 const WEBHOOK="https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7";
 const f=document.getElementById('intakeForm');
-f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('intakeBtn'),m=document.getElementById('intakeMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{const r=await fetch(WEBHOOK,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(r.ok){m.className='form-msg success';m.textContent="Got it — you're all set! We'll be in touch to confirm your detail.";f.reset();}else throw 0;}catch{m.className='form-msg error';m.textContent='Something went wrong. Please text us at (336) 934-1604.';}b.textContent='Submit My Details';b.disabled=false;});
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('intakeBtn'),m=document.getElementById('intakeMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{await fetch(WEBHOOK,{method:'POST',body:new FormData(f),mode:'no-cors'});m.className='form-msg success';m.textContent="Got it — you're all set! We'll be in touch to confirm your detail.";f.reset();}catch{m.className='form-msg error';m.textContent='Something went wrong. Please text us at (336) 934-1604.';}b.textContent='Submit My Details';b.disabled=false;});
 </script>
 </body>
 </html>
