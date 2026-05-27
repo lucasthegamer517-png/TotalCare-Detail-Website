@@ -4,59 +4,71 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>TotalCare Detail</title>
+<title>Quick Sign-Up — TotalCare Detail</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#ffffff;--ink:#0f2742;--body:#516079;--muted:#8190a4;
+  --bg:#f5f8fc;--ink:#0f2742;--body:#516079;--muted:#8190a4;
   --blue:#1b5faf;--blue-mid:#2872d4;--blue-soft:#eaf2fc;--gold:#a8842c;
   --border:#e4ebf4;--border2:#d2deef;--card:#ffffff;--navy:#0b2038;
   --fd:'Playfair Display',serif;--fb:'DM Sans',sans-serif;
 }
 body{font-family:var(--fb);background:var(--bg);color:var(--body);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
-.door-header{padding:22px 24px;text-align:center;border-bottom:1px solid var(--border)}
-.logo{font-family:var(--fd);font-weight:800;font-size:1.5rem;color:var(--ink);text-decoration:none;letter-spacing:.3px}
-.logo i{font-style:normal;color:var(--blue-mid)}
-.door-main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:30px 20px 40px;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(61,142,247,.06),transparent 60%)}
-.door-form{width:100%;max-width:440px;background:var(--card);border:1px solid var(--border);padding:32px 26px;position:relative;box-shadow:0 12px 44px rgba(15,39,66,.08)}
-.door-form::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
-.door-form h2{font-family:var(--fd);font-weight:700;font-size:1.45rem;color:var(--ink);margin-bottom:4px;text-align:center}
-.door-form .sub{font-size:.86rem;color:var(--body);font-weight:400;text-align:center;margin-bottom:24px}
+.head{padding:22px 24px;text-align:center;background:var(--navy)}
+.logo{font-family:var(--fd);font-weight:800;font-size:1.5rem;color:#fff;text-decoration:none;letter-spacing:.3px}
+.logo i{font-style:normal;color:#3d8ef7}
+main{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:30px 20px 50px}
+.card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--border);padding:36px 32px;position:relative;box-shadow:0 14px 50px rgba(15,39,66,.08)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.eyebrow{font-size:.62rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-mid);text-align:center;margin-bottom:10px}
+h1{font-family:var(--fd);font-weight:700;font-size:1.55rem;color:var(--ink);text-align:center;margin-bottom:8px}
+.sub{font-size:.88rem;color:var(--body);text-align:center;margin-bottom:26px;line-height:1.6}
 .form-group{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .form-label{font-size:.6rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-mid)}
-.form-input{background:#fff;border:1px solid var(--border2);color:var(--ink);font-family:var(--fb);font-size:1rem;font-weight:400;padding:15px 16px;outline:none;width:100%;transition:border-color .2s,box-shadow .2s}
-.form-input::placeholder{color:var(--muted)}
+.form-input{background:#fff;border:1px solid var(--border2);color:var(--ink);font-family:var(--fb);font-size:.95rem;padding:14px 16px;outline:none;width:100%;transition:border-color .25s,box-shadow .25s}
+.form-input::placeholder{color:var(--muted);font-size:.88rem}
 .form-input:focus{border-color:var(--blue-mid);box-shadow:0 0 0 3px rgba(40,114,212,.1)}
-.form-submit{width:100%;padding:17px;margin-top:4px;font-family:var(--fb);font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;border:none;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue-mid));box-shadow:0 8px 22px rgba(27,95,175,.2);transition:all .3s}
+.form-submit{width:100%;padding:16px;margin-top:6px;font-family:var(--fb);font-size:.76rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;border:none;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue-mid));box-shadow:0 8px 22px rgba(27,95,175,.2);transition:all .35s}
 .form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(27,95,175,.3)}
 .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.form-msg{margin-top:16px;padding:15px;font-size:.9rem;text-align:center;display:none}
+.form-msg{margin-top:18px;padding:15px;font-size:.88rem;text-align:center;display:none}
 .form-msg.success{background:var(--blue-soft);border:1px solid var(--border2);color:var(--blue);display:block}
 .form-msg.error{background:#fdeaea;border:1px solid #f3c7c7;color:#b32d2d;display:block}
-.door-footer{padding:18px 24px;text-align:center;font-size:.64rem;letter-spacing:1px;color:var(--muted);background:var(--navy)}
-.door-footer{color:#aebed4}
+.note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:2px 0 4px;cursor:pointer}
+.consent input{margin-top:2px;width:17px;height:17px;flex-shrink:0;accent-color:var(--blue-mid);cursor:pointer}
+.consent span{font-size:.76rem;color:var(--body);line-height:1.55}
+.foot{padding:18px 24px;text-align:center;font-size:.62rem;letter-spacing:1px;color:#aebed4;background:var(--navy)}
+@media(max-width:560px){.row{grid-template-columns:1fr}.card{padding:28px 22px}}
 </style>
 </head>
 <body>
-<header class="door-header"><span class="logo">Total<i>Care</i></span></header>
-<main class="door-main">
-<form class="door-form" id="doorForm" action="https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7" method="POST">
+<header class="head"><span class="logo">Total<i>Care</i></span></header>
+<main>
+<form class="card" id="doorForm">
+<div class="eyebrow">Welcome</div>
+<h1>Quick Sign-Up</h1>
+<p class="sub">Drop your details and we'll get started on your vehicle.</p>
 <input type="hidden" name="source" value="Door To Door">
-<input type="hidden" name="_subject" value="Door To Door Lead — TotalCare Detail">
-<h2>Get a Free Quote</h2>
-<p class="sub">Leave your info and we'll be in touch.</p>
+<input type="hidden" name="_subject" value="Door To Door Sign-Up — TotalCare Detail">
 <div class="form-group"><label class="form-label" for="dname">Full Name</label><input class="form-input" type="text" id="dname" name="name" placeholder="John Smith" required></div>
 <div class="form-group"><label class="form-label" for="dphone">Phone</label><input class="form-input" type="tel" id="dphone" name="phone" placeholder="(336) 000-0000" required></div>
 <div class="form-group"><label class="form-label" for="demail">Email</label><input class="form-input" type="email" id="demail" name="email" placeholder="you@example.com" required></div>
-<button type="submit" class="form-submit" id="doorBtn">Send My Info</button>
+<div class="form-group"><label class="form-label" for="daddr">Service Address</label><input class="form-input" type="text" id="daddr" name="address" placeholder="Where we'll detail the car" required></div>
+<div class="form-group"><label class="form-label">Your Vehicle</label><div class="row"><input class="form-input" type="text" name="vehicle_year" placeholder="Year" required><input class="form-input" type="text" name="vehicle_make" placeholder="Make" required><input class="form-input" type="text" name="vehicle_model" placeholder="Model" required></div></div>
+<label class="consent"><input type="checkbox" name="marketing_consent" value="Yes"><span>Send me deals &amp; offers from TotalCare by text or email — discounts and seasonal specials only, never spam. Msg &amp; data rates may apply; reply STOP anytime.</span></label>
+<button type="submit" class="form-submit" id="doorBtn">Sign Me Up</button>
+<p class="note">We use your details only to schedule your detail and send your receipt. We never sell your information.</p>
 <div class="form-msg" id="doorMsg"></div>
 </form>
 </main>
-<footer class="door-footer">&copy; 2026 TotalCare Mobile Detailing — Winston-Salem, NC</footer>
+<footer class="foot">&copy; 2026 TotalCare Mobile Detailing — Winston-Salem, NC</footer>
 <script>
+const WEBHOOK="https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7";
 const f=document.getElementById('doorForm');
-f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('doorBtn'),m=document.getElementById('doorMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';const fd=new FormData(f);try{await fetch("https://hook.us2.make.com/jjhp7479hcithyehl5jr8xx7xnxujeo7",{method:'POST',body:fd,mode:'no-cors'});m.className='form-msg success';m.textContent="Got it! We'll be in touch.";f.reset();}catch{m.className='form-msg error';m.textContent='Something went wrong. Please call or text (336) 934-1604.';}b.textContent='Send My Info';b.disabled=false;});
+f.addEventListener('submit',async e=>{e.preventDefault();const b=document.getElementById('doorBtn'),m=document.getElementById('doorMsg');b.disabled=true;b.textContent='Sending…';m.className='form-msg';try{await fetch(WEBHOOK,{method:'POST',body:new FormData(f),mode:'no-cors'});m.className='form-msg success';m.textContent="Got it — you're all set! We'll get started on your vehicle.";f.reset();}catch{m.className='form-msg error';m.textContent='Something went wrong. Please text us at (336) 934-1604.';}b.textContent='Sign Me Up';b.disabled=false;});
 </script>
 </body>
 </html>
