@@ -218,14 +218,14 @@ footer .copy{color:rgba(174,190,212,.4);font-size:.65rem;letter-spacing:1px}
 .preview-photo img{width:100%;height:100%;object-fit:cover;display:block}
 /* PHOTOS — before & after */
 .ba-section{background:var(--bg)}
-.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ba-grid{display:flex;flex-direction:column;gap:30px;max-width:1000px;margin:0 auto}
 .ba-pair{display:flex;flex-direction:column;gap:8px}
 .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.ba-cell{height:184px;overflow:hidden;position:relative}
+.ba-cell{height:340px;overflow:hidden;position:relative}
 .ba-cell img{width:100%;height:100%;object-fit:cover;display:block}
-.ba-tag{position:absolute;top:8px;left:8px;font-size:.55rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:rgba(11,32,56,.72);padding:4px 9px}
+.ba-tag{position:absolute;top:10px;left:10px;font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:rgba(11,32,56,.72);padding:5px 11px}
 .ba-name{font-size:.82rem;font-weight:600;color:var(--ink);text-align:center;margin-top:4px}
-@media(max-width:768px){.hero-inner{flex-direction:column;gap:30px}.hero-photo{width:100%;height:300px}.ba-grid{grid-template-columns:1fr;gap:16px}}
+@media(max-width:768px){.hero-inner{flex-direction:column;gap:30px}.hero-photo{width:100%;height:300px}.ba-grid{gap:20px}.ba-cell{height:215px}}
 </style>
 </head>
 <body>
